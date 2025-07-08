@@ -1,0 +1,834 @@
+---
+title: "Metadata"
+format: pdf
+editor: visual
+---
+
+# Dataset title:
+
+Data for integrated population models for white-headed woodpeckers in national forests of Oregon and Idaho, USA
+
+# **Abstract**
+
+These data and code are for reproducing analyses in Miller-ter Kuile et al. *in review* "Effects of forest restoration on focal bird populations depend on life stage and underlying habitat and climate context". In this paper, we collate data on nesting and occupancy for white-headed woodpeckers (*Dryobates albolarvatus*) in three national forests in Oregon (Fremont-Winema and Malheur) and Idaho (Payette), USA. We develop a two-step integrated population model (IPM) that incorporates data on each life stage and covariates and covariate effects important to each life stage and estimates population-level estimates of 1) population trends and 2) relationships between population growth and life-stage survival for egg, nestling, and adult survival. We then used hierarchical partitioning to explore 3) the relative contribution of forest restoration, habitat, and climate variables to each stage and to population growth.
+
+The code are divided into custom functions, data cleaning steps, analyses, and visualization steps. Data are divided by type, including response data (bird data) and covariate data.
+
+# **Creators**
+
+| Name                 | ORCID               |
+|----------------------|---------------------|
+| Ana Miller-ter Kuile | 0000-0003-2599-5158 |
+| Kiona Ogle           | 0000-0002-0652-8397 |
+| Jonathan Dudley      | 0000-0002-5560-2987 |
+| Victoria Saab        | 0000-0003-0645-0523 |
+| Marilyn Wright       | 0000-0003-3720-6283 |
+| Jamie Sanderlin      | 0000-0001-8651-9804 |
+
+Corresponding author: Ana Miller-ter Kuile ana.miller-ter-kuile\@nau.edu
+
+# **License**
+
+**\
+**CCBY - requires attribution
+
+# Keywords
+
+avian ecology, dynamic occupancy models, *Dryobates albolarvatus,* focal species monitoring, hierarchical partitioning, integrated population modeling, *Pinus ponderosa*, white-headed woodpecker
+
+# Funding of this work
+
+| PI              | Funding Agency | Funding Identification Number |
+|-----------------|----------------|-------------------------------|
+| Jamie Sanderlin | USFS           | 20-JV-11221635-196            |
+
+# Timeframe
+
+-   Begin Date: 2012
+
+-   End Date: 2025
+
+-   Data collection: compete
+
+# Geographic location
+
+Fremont-Winema National Forest:
+
+-   Verbal Description: Fremont-Winema National Forest
+
+-   North bounding coordinate: 42.94
+
+-   South bounding coordinate: 42.46
+
+-   East bounding coordinate: -120.67
+
+-   West bounding coordinate: -121.48
+
+Malheur National Forest:
+
+-   Verbal Description: Malheur National Forest
+
+-   North bounding coordinate: 44.46
+
+-   South bounding coordinate: 43.59
+
+-   East bounding coordinate: -118.11
+
+-   West bounding coordinate: -119.84
+
+Payette National Forest:
+
+-   Verbal Description: Payette National Forest
+
+-   North bounding coordinate: 45.65
+
+-   South bounding coordinate: 44.64
+
+-   East bounding coordinate: -113.96
+
+-   West bounding coordinate: -116.38
+
+# Taxomonic species or groups
+
+*Dryobates albolarvatus* (white-headed woodpecker)
+
+*Pinus ponderosa* (ponderosa pine) ecosystems
+
+# Methods
+
+### **Study sites and species**
+
+In this project, we compiled data for three populations of white-headed woodpeckers in Oregon and Idaho, USA. Each population was surveyed for 6-8 years during 2012-2021. The three populations of white-headed woodpeckers occurred in three forested landscapes that have been part of landscape-scale forest restoration efforts through the Collaborative Forest Landscape Restoration Program (CFLRP; https://www.fs.usda.gov/restoration/CFLRP/index.shtml). The landscapes included the Lakeview Stewardship Project (42.2° N, 120.2° W, Fremont-Winema National Forest) and Southern Blues Restoration Coalition (44.0° N, 118.7° W, Malheur National Forest) in Oregon, USA, and the Weiser-Little Salmon Headwaters Project (44.8° N, 116.5° W, Payette National Forest) in Idaho, USA. CFLRP landscapes experienced a combination of forest restoration management treatments, including tree removal (primarily of small trees of 13-51 cm diameter-at-breast-height) followed by prescribed burning. CFLRP landscapes were relatively insulated from other suitable habitat patches within and around each national forest due to a combination of habitat type and land use. Thus, treating these landscapes as relatively distinct population ranges allowed us to examine the direct effects of CFLRP management actions on white-headed woodpeckers while also comprising a landscape with relatively similar management history compared to surrounding areas (which consisted of private and state lands along with other portions of each national forest).
+
+### **Bird surveys**
+
+Surveys were conducted to quantify adult woodpecker occupancy and locations and fates of nests, including how many eggs, nestlings, and fledglings were associated with each nest. We surveyed adult white-headed woodpeckers in each population along 27-30 transects. Transects were 2700 m long, with 10 survey points every 300 m along each transect. Approximately half of the transects were placed in areas that received forest restoration treatments (e.g., burning, thinning/harvesting, or both) and half in areas that did not receive forest restoration treatments within the timeframe of our study (2012-2021). At each transect point, field technicians performed call-broadcast surveys to determine the presence or absence of adult white-headed woodpeckers. If technicians observed an adult white-headed woodpecker, they also searched for nests in the surrounding area. Surveyors also re-visited nest trees that had been occupied by white-headed woodpeckers in previous years. When surveyors located active nests, they used pole-mounted cameras to observe nest contents. We revisited nests throughout the season and tracked the number of eggs, nestlings, and fledglings from each nest. We determined pre-fledgling sex ratios using color-photo and video camera data collected during nest visits. Numbers of female and male nestlings were determined for each nest from the number of red feathers on each nestling’s pileum, males having noticeably more than females (J. Dudley unpublished data).
+
+### **Environmental covariates**
+
+For nest stages, we used previously published information on covariates that shape egg number, egg survival, and nestling survival (see *Data Provenance* section of metadata). This study examined the relationships between each of these nesting stages and a set of covariates for each nest location that captured ecological variables related to physiology, foraging, and habitat risk (e.g., nest predation risk) at multiple spatial scales. These included nest-tree and stand-scale (2.25 ha) covariates collected during field surveys along with a set of variables at the landscape-scale (314 ha) that captured restoration treatment extent, climate, and forest habitat. In summary, white-headed woodpeckers lay four eggs on average, regardless of other factors (covariates). However, egg survival is shaped by stand-scale forest restoration treatment category, variation in the size of closed-forest (40-100% canopy cover) patches at the landscape scale, average monthly maximum temperature, and cumulative precipitation during the period when nests have eggs. Nestling survival is shaped by stand-scale forest restoration treatment category, landscape-scale percent burned, nest tree species, nest height, nest initiation date, average monthly maximum temperature, and cumulative precipitation during the period when nests have nestlings.
+
+In addition to these known covariates for nesting stages, we also compiled a set of landscape-scale (1 km-radius, 314 ha) variables that can influence adult occupancy. These included covariates related to forest restoration treatment (percent burned and percent tree removal), canopy cover (closed \[70-100%\] and open \[10-40%\] canopy cover classes), and seasonal (winter and spring) climate variables (cumulative precipitation and mean temperature) at each transect survey point. We used the US Forest Service Activities Tracking System database (FACTS, https://www.fs.usda.gov/managing-land/natural-resource-manager) to determine the timing and aerial extent of forest restoration treatments. We compiled canopy cover classes annually from 2012-2021 using the US Forest Service Tree Canopy Cover product suite (Science TCC, version 2021.4, https://data.fs.usda.gov/geodata/rastergateway/treecanopycover/) after applying a mask using LANDFIRE EVT (CONUS LF 2022, https://landfire.gov/vegetation/nvc) that maintained all tree lifeforms for existing vegetation. We used ClimateNA for summarizing climate related covariates from 2012-2021 (Wang et al. 2016) and calculated all landscape metrics using ArcGIS Pro 3.0 focal statistics (ESRI 2022). We ran a model of adult occupancy with a full set of potential covariates and selected important covariates to include in the two-step population modeling methods.
+
+### **Modeling framework**
+
+We aimed to understand the combined effects of forest restoration, climate, and habitat variables on the three white-headed woodpecker populations. To develop this understanding and to address our research questions, we implemented a two-step modeling process. First, we fit a Bayesian statistical model to each life-stage specific dataset available for each population: 1) egg production, 2) egg survival, 3) nestling survival, 4) dynamic adult occupancy (using the “persistence” term as a proxy for initial population size and adult survival), and 5) pre-fledgling sex ratios. Second, we used 1050 posterior samples of the regression coefficients (covariate effects and intercepts) from each statistical model as inputs, along with original nest- and landscape-scale covariates into a stage-structured, integrated population model (IPM).
+
+More information on the modeling can be found in the main article, though we provide an overview here.
+
+### **Step 1: Statistical models for population life-stage data**
+
+For egg production, egg survival, and nestling survival, we used covariates previously shown to be important for each life stage. For adult survival, we used a dynamic, multi-season occupancy model including only those covariates that had non-zero effects based on Bayesian *p*-values from a model with all potential covariates. We used covariates that drive year-to-year persistence at survey locations as covariates for both initial adult occupancy and as a proxy for adult apparent survival. We also determined that the proportion of female near-fledging nestlings was not related to variables that could potentially impact sex ratios in birds, including brood size and nest initiation date.
+
+### **Step 2: Integrated population model overview**
+
+To incorporate the statistical models into the IPM, we built a stage-structured, female-only population model that included eggs, nestlings, fledglings, breeding adults, and non-breeding adults. This model included rates of egg production (*f*) and transitions between different population stages, including egg survival ($\phi_{egg}$), nestling survival ($\phi_{nstl}$), fledgling survival ($\phi_{fl}$) (within a year), adult survival ($\phi_{ad}$), and adult transition between breeding and non-breeding states (*w*) (at the end of a year). Fledglings that survive (within a year) are divided into the fraction that transitions to breeding (*p~Br~*) and non-breeding (1-*p~Br~*) adults. We did not estimate inputs/losses due to immigration/emigration because we assumed populations were relatively closed within the timeframe of data collection (nesting season; May-August). The dynamic IPM thus simulates the numbers of eggs (*N~egg~*), nestlings (*N~nstl~*), and fledglings (*N~fl~*) within a year, and the numbers of breeding adults (*N~Br~*) and non-breeding adults (*N~NBr~*) at the end of a year within a CFLRP landscape.
+
+The IPM includes modules for egg production, nestling survival, fledgling survival, and adult survival, all of which are informed by the life stage statistical models implemented in step 1. Hence, the IPM includes important environmental covariates for each vital rate based on the statistical models. Inputs to the IPM include: 1) relevant covariate timeseries for each nest location and a set of “potential occupancy” points for adults (more information below in this section) and 2) 1050 posterior samples of the covariate effects and intercept values from each life stage statistical model (i.e., 350 independent samples from each of three MCMC chains). We sampled from the posterior distributions by randomly drawing a posterior sample of associated parameters (intercepts and covariate effects) from the 1050 values for each complete simulation of the IPM. As a result, within a given complete run of the IPM, a vector of parameters was drawn from the posterior distributions generated by the statistical models, thus maintaining the posterior correlation structure of the parameters.
+
+We summarized rates of transition between population stages at the yearly level by averaging across nests or potential adult occupancy locations within a year. When any of the three populations were not surveyed for a given vital rate in a given year, we estimated the missing transition probability values based on the mean of that vital rate for the year before and the year after for that population (to account for potential temporal correlation in forest management variables).
+
+We assumed that nests were randomly sampled from the total “population” of nests for white-headed woodpeckers associated with each forest landscape such that nests represented the range of possible conditions for each of the three populations.
+
+Conversely, because the adult occupancy survey design over-sampled areas that experienced forest management relative to the total national forest landscape, we did not assume that survey locations represented a random sample of possible occupied points. Instead, we used these data for fitting the adult occupancy life stage statistical model, from which we pulled the intercept and covariate effect posterior samples. We then generated a set of gridded “potential occupancy” points for each population (Fremont-Winema: n = 3925; Malheur: n = 4199; Payette: n = 3937) at a regular distance of 1 km across each entire CFLRP landscape. The distance between points was based on previous studies on space use and home range size for white-headed woodpeckers. We pulled covariate values for each of the gridded points from remotely sensed datasets (including: FACTS, ClimateNA, Science TCC, and LANDFIRE EVT, see section: *Environmental covariates*) to better represent the underlying distribution of important covariates for adult population rates.
+
+# Data Provenance
+
+Data included in this paper are both novel to this project and previously published.
+
++----------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+---------------------+----------------------------+
+| Dataset title                                                                                                                    | Dataset DOI/url                                             | Creator             | Contact                    |
++==================================================================================================================================+=============================================================+=====================+============================+
+| Data for: Forest management, forest vegetation, and climate influence nesting ecology of a focal bird species in the western USA | <https://www.fs.usda.gov/rds/archive/catalog/RDS-2023-0053> | A. Miller-ter Kuile | Jonathan Dudley            |
+|                                                                                                                                  |                                                             |                     |                            |
+|                                                                                                                                  |                                                             | J. Dudley           | jonathan.dudley\@ usda.gov |
+|                                                                                                                                  |                                                             |                     |                            |
+|                                                                                                                                  |                                                             | V. Saab             |                            |
+|                                                                                                                                  |                                                             |                     |                            |
+|                                                                                                                                  |                                                             | K. Ogle             |                            |
+|                                                                                                                                  |                                                             |                     |                            |
+|                                                                                                                                  |                                                             | J. Sanderlin        |                            |
++----------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+---------------------+----------------------------+
+
+# Data objects
+
+We describe the data objects in the "data_raw" folder, since these are the raw data we compiled for this project. Other data objects that are the product of data cleaning or analyses can be found in the "Other Objects" section with short descriptions below and can be found in the "data" folder.
+
+## Data Table: Birds01_nest_locations.csv
+
++--------------+------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+--------------------+
+| Column name  | Description                                                                                          | Unit or code explanation or data format                                     | Missing value code |
++==============+======================================================================================================+=============================================================================+====================+
+| Year_located | Year nest was located                                                                                | YYYY                                                                        |                    |
++--------------+------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+--------------------+
+| Date_located | Date nest was located                                                                                | YYYY-MM-DD                                                                  | YYYY-99-99         |
++--------------+------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+--------------------+
+| Project_ID   | Monitoring project when nest was located                                                             | EM_FWOR: Fremont-Winema                                                     |                    |
+|              |                                                                                                      |                                                                             |                    |
+|              |                                                                                                      | EM_MAOR: Malheur                                                            |                    |
+|              |                                                                                                      |                                                                             |                    |
+|              |                                                                                                      | EM_PAID: Payette                                                            |                    |
++--------------+------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+--------------------+
+| Species      | Species of bird observed                                                                             | Four-letter species codes, usually WHWO: white-headed woodpecker            |                    |
++--------------+------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+--------------------+
+| 1st_Observer | First person to observe nest                                                                         | initials of the observer                                                    |                    |
++--------------+------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+--------------------+
+| Nest_ID      | The specific ID given to each nest, which includes project, transect, point, and year IDs            | Format: Project_Transect_Point_Year                                         |                    |
++--------------+------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+--------------------+
+| Cavity_ID    | The ID of cavities without the project or year info, relevant when cavities are re-used across years | format of: Transect_point                                                   |                    |
++--------------+------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+--------------------+
+| Nest_Trt     | Forest restoration treatments that occurred at nest                                                  | Some combination of letters to include all treatment categories, including: |                    |
+|              |                                                                                                      |                                                                             |                    |
+|              |                                                                                                      | U - untreated                                                               |                    |
+|              |                                                                                                      |                                                                             |                    |
+|              |                                                                                                      | OB - other type of burn                                                     |                    |
+|              |                                                                                                      |                                                                             |                    |
+|              |                                                                                                      | B - burn                                                                    |                    |
+|              |                                                                                                      |                                                                             |                    |
+|              |                                                                                                      | H - harvest of larger trees                                                 |                    |
+|              |                                                                                                      |                                                                             |                    |
+|              |                                                                                                      | T - thinning of smaller trees                                               |                    |
+|              |                                                                                                      |                                                                             |                    |
+|              |                                                                                                      | OA - other aspen treatment                                                  |                    |
+|              |                                                                                                      |                                                                             |                    |
+|              |                                                                                                      | OH - other harvest category                                                 |                    |
++--------------+------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+--------------------+
+| Transect_ID  | Identifier for the transect the nest was located one                                                 |                                                                             |                    |
++--------------+------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+--------------------+
+| Point_ID     | Identifier for the point on the transect nearest the nest location                                   |                                                                             |                    |
++--------------+------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+--------------------+
+| Direction    | Direction from the transect point to the nest                                                        | Degrees                                                                     | 999                |
++--------------+------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+--------------------+
+| Distance     | Distance from the transect point to the nest                                                         | Meters                                                                      | 999                |
++--------------+------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+--------------------+
+| UTM_E        | Easting coordinate                                                                                   |                                                                             |                    |
++--------------+------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+--------------------+
+| UTM_N        | Northing Coordinate                                                                                  |                                                                             |                    |
++--------------+------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+--------------------+
+| UTM\_        | Datum zone for UTM                                                                                   |                                                                             |                    |
+|              |                                                                                                      |                                                                             |                    |
+| datum_zone   |                                                                                                      |                                                                             |                    |
++--------------+------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+--------------------+
+| Nest_Ht      | Height of nest above ground                                                                          | meters                                                                      |                    |
++--------------+------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+--------------------+
+| Cavity_age   | Age of cavity                                                                                        | N - new                                                                     |                    |
+|              |                                                                                                      |                                                                             |                    |
+|              |                                                                                                      | O - old                                                                     |                    |
++--------------+------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+--------------------+
+| Decay_class  | Decay class of cavity snag/tree                                                                      |                                                                             |                    |
++--------------+------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+--------------------+
+| Tree\_       | Whether the nest was in a living tree, a standing snag, or a log                                     |                                                                             |                    |
+|              |                                                                                                      |                                                                             |                    |
+| Snag_Log     |                                                                                                      |                                                                             |                    |
++--------------+------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+--------------------+
+| Tree_sp      | The species of tree that the cavity was located in                                                   | Four- or five-letter species code:                                          |                    |
+|              |                                                                                                      |                                                                             |                    |
+|              |                                                                                                      | JUOC                                                                        |                    |
+|              |                                                                                                      |                                                                             |                    |
+|              |                                                                                                      | PIPO - ponderosa pine                                                       |                    |
+|              |                                                                                                      |                                                                             |                    |
+|              |                                                                                                      | CEDO - cedar                                                                |                    |
+|              |                                                                                                      |                                                                             |                    |
+|              |                                                                                                      | ABCO - true fir                                                             |                    |
+|              |                                                                                                      |                                                                             |                    |
+|              |                                                                                                      | POTR5 - quaking aspen                                                       |                    |
+|              |                                                                                                      |                                                                             |                    |
+|              |                                                                                                      | PSME - Douglas-fir                                                          |                    |
+|              |                                                                                                      |                                                                             |                    |
+|              |                                                                                                      | ABGR - true fir                                                             |                    |
+|              |                                                                                                      |                                                                             |                    |
+|              |                                                                                                      | PSMEG - Douglas-fir                                                         |                    |
++--------------+------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+--------------------+
+| Tree_ht      | Height of tree or snag                                                                               | meters                                                                      |                    |
++--------------+------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+--------------------+
+| DBH          | Diameter at breast height of tree or snag                                                            | centimeters                                                                 |                    |
++--------------+------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+--------------------+
+| Orientation  | Orientation of the cavity                                                                            | degrees                                                                     |                    |
++--------------+------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+--------------------+
+| Aspect       | Aspect of the slope tree or snag is located on                                                       | degrees                                                                     |                    |
++--------------+------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+--------------------+
+| Slope        | The slope of the location of the snag/tree                                                           |                                                                             |                    |
++--------------+------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+--------------------+
+| Comments     | Any additional comments                                                                              |                                                                             |                    |
++--------------+------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+--------------------+
+
+## Data Table: Survey02_points.csv
+
+| Column name | Description | Unit or code explanation or data format | Missing value code |
+|----|----|----|----|
+| Point_ID | The identifier for the point on the transect |  |  |
+| UTM_E | Easting coordinate |  |  |
+| UTM_N | Northing coordinate |  |  |
+| DATUM | UTM zone for the coordinate |  |  |
+| ELEV | Elevation of the point | meters |  |
+| Transect_ID | ID for the transect where the point is located |  |  |
+| Point_no | The point number of the transect |  |  |
+| YR_Treated | Year that forest restoration treatments were enacted | YYYY | 999 |
+| Treatment_Description | Description of treatments drawn from facts |  |  |
+| FACTS_ID | ID from the FACTS database |  |  |
+| Sale_Name | Information on the sale name, if appropriate, from FACTS |  |  |
+
+## Data Table: Survey03_point_visits.csv
+
+| Column name | Description | Unit or code explanation or data format | Missing value code |
+|----|----|----|----|
+| Visit_ID | The visit ID for that point and that transect | format: Project_Transect_Point_Year_Date |  |
+| Point_ID | The point on the transect for that visit | Project_Transect_Point |  |
+| Survey_Date | The date of the visit | YYYY-MM-DD |  |
+| Visit_no | The repeat visit number, usually either the first or second |  |  |
+| St_time | The start time of the survey | H:MM:SS AM/PM |  |
+| Survey_length | The length of the survey |  |  |
+| Wind | wind speed | ordinal 0+ |  |
+| Temp_C | Temperature in celcius | degrees C | 999 |
+| Observer | Initials of person who was observing for birds |  |  |
+| Recorder | initials of person who was recording data |  |  |
+| Reviewer | Initials of person who was reviewing the data |  |  |
+| Comments | any comments on the visit |  |  |
+
+## Data Table: Survey04_point_detections.csv
+
++----------------+---------------------------------------------------------------+------------------------------------------+--------------------+
+| Column name    | Description                                                   | Unit or code explanation or data format  | Missing value code |
++================+===============================================================+==========================================+====================+
+| Visit_ID       | The visit ID for that point and that transect                 | format: Project_Transect_Point_Year_Date |                    |
++----------------+---------------------------------------------------------------+------------------------------------------+--------------------+
+| Species        | The species of bird observed                                  | usually or always WHWO                   |                    |
++----------------+---------------------------------------------------------------+------------------------------------------+--------------------+
+| Detection      | How the detection occurred                                    | V - visual                               |                    |
+|                |                                                               |                                          |                    |
+|                |                                                               | A - audio                                |                    |
++----------------+---------------------------------------------------------------+------------------------------------------+--------------------+
+| Distance_class | How far away the bird was, binned into distance classes       | 0_50: 0 to 50 m                          | blank              |
+|                |                                                               |                                          |                    |
+|                |                                                               | 50_150: 50 to 150 m                      |                    |
+|                |                                                               |                                          |                    |
+|                |                                                               | ovr_150: over 150 m                      |                    |
++----------------+---------------------------------------------------------------+------------------------------------------+--------------------+
+| Time_left_min  | minutes left in survey                                        | minutes                                  | 999                |
++----------------+---------------------------------------------------------------+------------------------------------------+--------------------+
+| Time_left_sec  | seconds left in survey                                        | seconds                                  | 999                |
++----------------+---------------------------------------------------------------+------------------------------------------+--------------------+
+| Comments       | Any comments on the observation                               |                                          |                    |
++----------------+---------------------------------------------------------------+------------------------------------------+--------------------+
+| Period         | Whether or not the bird was counted before the survey started | TR - before                              |                    |
+|                |                                                               |                                          |                    |
+|                |                                                               | DU - during                              |                    |
+|                |                                                               |                                          |                    |
+|                |                                                               | AF - after                               |                    |
++----------------+---------------------------------------------------------------+------------------------------------------+--------------------+
+
+## Data Table: CFLRP_ClimateNA_data_transects_nests_2011-2021
+
++---------------+---------------------------------------------------------------------------------------------+-----------------------------------------+--------------------+
+| Column name   | Description                                                                                 | Unit or code explanation or data format | Missing value code |
++===============+=============================================================================================+=========================================+====================+
+| Location      | the project ID for the point                                                                | EMFWOR - Fremont-Winema                 |                    |
+|               |                                                                                             |                                         |                    |
+|               |                                                                                             | EMMAOR -Malheur                         |                    |
+|               |                                                                                             |                                         |                    |
+|               |                                                                                             | EMPAID - Payette                        |                    |
++---------------+---------------------------------------------------------------------------------------------+-----------------------------------------+--------------------+
+| Pt_type       | Whether it was a nest site or a transect point                                              |                                         |                    |
++---------------+---------------------------------------------------------------------------------------------+-----------------------------------------+--------------------+
+| TransID       | The transect ID for the data                                                                |                                         |                    |
++---------------+---------------------------------------------------------------------------------------------+-----------------------------------------+--------------------+
+| MeasurementID | More specific either PointID or NestID, depending on Pt_type                                |                                         |                    |
++---------------+---------------------------------------------------------------------------------------------+-----------------------------------------+--------------------+
+| ClimateYear   | The year the climate data are from                                                          |                                         |                    |
++---------------+---------------------------------------------------------------------------------------------+-----------------------------------------+--------------------+
+| Tave01:Tave12 | Monthly average temperature (C) data, with 01 corresponding to January; 12 to December      | degrees C                               |                    |
++---------------+---------------------------------------------------------------------------------------------+-----------------------------------------+--------------------+
+| PPT01:PPT12   | Monthly cumulative precipitation (mm) data with 01 corresponding to January; 12 to December | mm                                      |                    |
++---------------+---------------------------------------------------------------------------------------------+-----------------------------------------+--------------------+
+| Tave_wt       | Average temperature in winter months                                                        | degrees C                               |                    |
++---------------+---------------------------------------------------------------------------------------------+-----------------------------------------+--------------------+
+| Tave_sp       | Average temperature in spring months                                                        | degrees C                               |                    |
++---------------+---------------------------------------------------------------------------------------------+-----------------------------------------+--------------------+
+| Tave_sm       | Average temperature in summer months                                                        | degrees C                               |                    |
++---------------+---------------------------------------------------------------------------------------------+-----------------------------------------+--------------------+
+| Tave_at       | Average temperature in autumn months                                                        | degrees C                               |                    |
++---------------+---------------------------------------------------------------------------------------------+-----------------------------------------+--------------------+
+| PPT_wt        | Cumulative precipitation in winter                                                          | mm                                      |                    |
++---------------+---------------------------------------------------------------------------------------------+-----------------------------------------+--------------------+
+| PPT_sp        | Cumulative precipitation in spring                                                          | mm                                      |                    |
++---------------+---------------------------------------------------------------------------------------------+-----------------------------------------+--------------------+
+| PPT_sm        | Cumulative precipitation in summer                                                          | mm                                      |                    |
++---------------+---------------------------------------------------------------------------------------------+-----------------------------------------+--------------------+
+| PPT_at        | Cumulative precipitation in autumn                                                          | mm                                      |                    |
++---------------+---------------------------------------------------------------------------------------------+-----------------------------------------+--------------------+
+
+## Data Tables: IPM_backgroundpts_climatedata_2000-2023_n12061_reduced_variables\_\*.csv
+
+There are three of these with the same structure. "LKV" corresponds to the Fremont-Winema, "MAL" to the Malheur, and "PAY" to the Payette. The structure of all three is the same.
+
+| Column name | Description | Unit or code explanation or data format | Missing value code |
+|----|----|----|----|
+| ID_Pt_YR | Identifier for the point and year of data |  |  |
+| ID_Pt | Identifier for just the point |  |  |
+| YR | Year of climate data | YYYY |  |
+| UTM_E | Easting coordinate |  |  |
+| UTM_N | Northing coordinate |  |  |
+| UTM_zone | UTM zone for UTM coordinates |  |  |
+| Latitude | latitude | degrees |  |
+| Longitude | longitude | degrees |  |
+| Elevation | Elevation of the point | meters |  |
+| Tave_wt | Winter average temperature | degrees C |  |
+| Tave_sp | Spring average temperature | degrees C |  |
+| Tave_sm | Summer average temperature | degrees C |  |
+| Tave_at | Autumn average temperature | degrees C |  |
+| PPT_wt | Winter cumulative precipitation | mm |  |
+| PPT_sp | Spring cumulative precipitation | mm |  |
+| PPT_sm | Summer cumulative precipitation | mm |  |
+| PPT_at | Autumn cumulative precipitation | mm |  |
+
+## Data Table: \*\_SCIbased_IPMdata_backgroundpts_CCandFACTS_ThinData.csv
+
+One for each of EMFWOR (Fremont-Winema), EMMAOR (Malheur) and EMPAID (Payette). Data are the same in each.
+
++-----------------+---------------------------------------------------------------------------------------------------------------------------+-----------------------------------------+--------------------+
+| Column name     | Description                                                                                                               | Unit or code explanation or data format | Missing value code |
++=================+===========================================================================================================================+=========================================+====================+
+| ID              | Identifier for the background point                                                                                       |                                         |                    |
++-----------------+---------------------------------------------------------------------------------------------------------------------------+-----------------------------------------+--------------------+
+| sci11_1040_1km: | Value of canopy cover in the 10-40% canopy cover class (open canopy) between 2011-2021. Format is "sci"YY_canopy_scale    | percent                                 |                    |
+|                 |                                                                                                                           |                                         |                    |
+| sci21_1040_1km  |                                                                                                                           |                                         |                    |
++-----------------+---------------------------------------------------------------------------------------------------------------------------+-----------------------------------------+--------------------+
+| Thin0211:       | Value of percent of 1km landscape that has received harvest and thin treatments between 2011 - 2021. Format is "Thin02"YY | percent                                 |                    |
+|                 |                                                                                                                           |                                         |                    |
+| Thin0223        |                                                                                                                           |                                         |                    |
++-----------------+---------------------------------------------------------------------------------------------------------------------------+-----------------------------------------+--------------------+
+
+## Data Table: \*\_SCIbased_IPMdata_n280_transect_pts_CCandFACTS_ThinData.csv
+
+One for each of the three populations. EMFWOR: Fremont-Winema, EMMAOR: Malheur, EMPAID: Payette
+
++-----------------+-------------------------------------------------------------------------------------------------------------+-----------------------------------------+--------------------+
+| Column name     | Description                                                                                                 | Unit or code explanation or data format | Missing value code |
++=================+=============================================================================================================+=========================================+====================+
+| Point_ID        | The ID for the point on the transect for the data                                                           |                                         |                    |
++-----------------+-------------------------------------------------------------------------------------------------------------+-----------------------------------------+--------------------+
+| sci12_010_1km:  | Percent of landscape in the 0-10% canopy cover class at the 1km radius scale. Format is sci"YY"\_010_1km    | percent                                 |                    |
+|                 |                                                                                                             |                                         |                    |
+| sci21_010_1km   |                                                                                                             |                                         |                    |
++-----------------+-------------------------------------------------------------------------------------------------------------+-----------------------------------------+--------------------+
+| sci11_1040_1km: | Percent of landscape in the 10-40% canopy cover class at the 1km radius scale. Format is sci"YY"\_1040_1km  |                                         |                    |
+|                 |                                                                                                             |                                         |                    |
+| sci21_1040_1km  |                                                                                                             |                                         |                    |
++-----------------+-------------------------------------------------------------------------------------------------------------+-----------------------------------------+--------------------+
+| sci11_4070_1km: | Percent of landscape in the 40-70% canopy cover class at the 1km radius scale. Format is sci"YY"\_4070_1km  |                                         |                    |
+|                 |                                                                                                             |                                         |                    |
+| sci21_4070_1km  |                                                                                                             |                                         |                    |
++-----------------+-------------------------------------------------------------------------------------------------------------+-----------------------------------------+--------------------+
+| sci12_GT70_1km: | Percent of landscape in the 70-100% canopy cover class at the 1km radius scale. Format is sci"YY"\_GT70_1km |                                         |                    |
+|                 |                                                                                                             |                                         |                    |
+| sci21_GT70_1km  |                                                                                                             |                                         |                    |
++-----------------+-------------------------------------------------------------------------------------------------------------+-----------------------------------------+--------------------+
+
+## Data Table: \*\_LF-based_OccupData_n270_transect_pts.csv
+
+One for each landscape. EMFWOR: Fremont-Winema; EMMAOR: Malheur; EMPAID: Payette
+
++-----------------+-------------------------------------------------------------------------------------------------------------+-----------------------------------------+--------------------+
+| Column name     | Description                                                                                                 | Unit or code explanation or data format | Missing value code |
++=================+=============================================================================================================+=========================================+====================+
+| Ha211_1000:     | Percent of landscape with harvested treatment in each year at the 1km radius scale. Format is HA2"YY"\_1000 | percent                                 |                    |
+|                 |                                                                                                             |                                         |                    |
+| Ha221_1000      |                                                                                                             |                                         |                    |
++-----------------+-------------------------------------------------------------------------------------------------------------+-----------------------------------------+--------------------+
+| Bu211_1000:     | Percent of landscape with burned treatment in each year at the 1km radius scale. Format is Bu2"YY"\_1000    | percent                                 |                    |
+|                 |                                                                                                             |                                         |                    |
+| Bu221_1000      |                                                                                                             |                                         |                    |
++-----------------+-------------------------------------------------------------------------------------------------------------+-----------------------------------------+--------------------+
+| X1shdi211_1000: | Shannon diversity of treatment at the 1km radius scale. Format is X1shdi2"YY"\_1000                         | Shannon-diversity metric                |                    |
+|                 |                                                                                                             |                                         |                    |
+| X1shdi221_1000  |                                                                                                             |                                         |                    |
++-----------------+-------------------------------------------------------------------------------------------------------------+-----------------------------------------+--------------------+
+
+## Data Table: Survey_points.csv
+
+duplicate of Survey02_points.csv
+
+| Column name | Description | Unit or code explanation or data format | Missing value code |
+|----|----|----|----|
+| Point_ID | The identifier for the point on the transect |  |  |
+| UTM_E | Easting coordinate |  |  |
+| UTM_N | Northing coordinate |  |  |
+| DATUM | UTM zone for the coordinate |  |  |
+| ELEV | Elevation of the point | meters |  |
+| Transect_ID | ID for the transect where the point is located |  |  |
+| Point_no | The point number of the transect |  |  |
+| YR_Treated | Year that forest restoration treatments were enacted | YYYY | 999 |
+| Treatment_Description | Description of treatments drawn from facts |  |  |
+| FACTS_ID | ID from the FACTS database |  |  |
+| Sale_Name | Information on the sale name, if appropriate, from FACTS |  |  |
+
+# Scripts/code (software)
+
+in the "00_functions" folder
+
+| File name | Description | Scripting language |
+|----|----|----|
+| hp_functions.R | functions for hierarchical partitioning for the statistical models and IPM | R |
+| rhat_functions.R | Functions for graphing convergence statistics | R |
+| tidy_functions.R | Functions for tidying different datasets | R |
+
+in the "01_cleaning" folder
+
+| File name | Description | Scripting language |
+|----|----|----|
+| 00_breeding_prop.R | script to determine the number of adults associated with nests in the occupancy survey as an estimate for breeding proportions | R |
+
+in the "02_parameter_models" folder:
+
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------+--------------------+
+| File name                 | Description                                                                                                                      | Scripting language |
++===========================+==================================================================================================================================+====================+
+| egg_num_model_run.R       | wrapper script to run the egg number model with intercepts by forest population                                                  | R                  |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------+--------------------+
+| egg_number_byforest.R     | the JAGS model for egg number                                                                                                    | JAGS               |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------+--------------------+
+| egg_s_hierarchical\_      | one for each population: hierarchical partitioning wrapper script for egg survival model                                         | R                  |
+|                           |                                                                                                                                  |                    |
+| partitioning\_\*.R        |                                                                                                                                  |                    |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------+--------------------+
+| egg_survival\_            | wrapper script for running the egg survival model for each population                                                            | R                  |
+|                           |                                                                                                                                  |                    |
+| model_run.R               |                                                                                                                                  |                    |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------+--------------------+
+| egg_survival_byforest.R   | JAGS model for running the egg survival model                                                                                    | JAGS               |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------+--------------------+
+| eggs\_\*.R                | one JAGS model for each of the nested combinations of covariate groups for hierarchical partitioning for egg survival model      | JAGS               |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------+--------------------+
+| nestling_s_hierarchical\_ | one for each population: hierarchical partitioning wrapper script for nestling survival model                                    | R                  |
+|                           |                                                                                                                                  |                    |
+| partitioning\_\*.R        |                                                                                                                                  |                    |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------+--------------------+
+| nestling_survival\_       | wrapper script for running the nestling survival model for each population                                                       | R                  |
+|                           |                                                                                                                                  |                    |
+| model_run.R               |                                                                                                                                  |                    |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------+--------------------+
+| nestling_survival\_       | JAGS model for running the nestling survival model                                                                               | JAGS               |
+|                           |                                                                                                                                  |                    |
+| byforest.R                |                                                                                                                                  |                    |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------+--------------------+
+| nstls\_\*.R               | one JAGS model for each of the nested combinations of covariate groups for hierarchical partitioning for nestling survival model | JAGS               |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------+--------------------+
+| 01_prep\_                 | prep observed detection data for WHWO adult occupancy for full model                                                             | R                  |
+|                           |                                                                                                                                  |                    |
+| observation_data.R        |                                                                                                                                  |                    |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------+--------------------+
+| 02_prep_climate_data.R    | prep climate data for WHWO adult occupancy for full model                                                                        | R                  |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------+--------------------+
+| 02c_landscape_variables.R | prep landscape data for WHWO adult occupancy for full model                                                                      | R                  |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------+--------------------+
+| 03_combine\_              | combine occupancy data and covariates for WHWO adult occupancy for full model                                                    | R                  |
+|                           |                                                                                                                                  |                    |
+| occupancy_data.R          |                                                                                                                                  |                    |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------+--------------------+
+| 04_prepand                | prep data list and test for WHWO adult occupancy for full model (we ran on the computing cluster)                                | R                  |
+|                           |                                                                                                                                  |                    |
+| rundynmodel.R             |                                                                                                                                  |                    |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------+--------------------+
+| 05_ModelConvergence.R     | check model convergence from adult occupancy full model                                                                          | R                  |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------+--------------------+
+| 06_pvalues.R              | find important covariates based on Bayesian p-values for adult occupancy full model                                              | R                  |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------+--------------------+
+| adult_hierarchical\_      | one for each population: Hierarchical partitioning wrapper script for the adult occupancy model for EMFWOR (Fremont-Winema)      | R                  |
+|                           |                                                                                                                                  |                    |
+| partitioning\_\*.R        |                                                                                                                                  |                    |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------+--------------------+
+| adult_occ_model_run\_\*.R | one for each population: Wrapper script to run the reduced occupancy model for Fremont-Winema                                    | R                  |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------+--------------------+
+| adult_occ_model_run.R     | Wrapper script to run the reduced occupancy model for all data                                                                   | R                  |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------+--------------------+
+| adult_dyn\_               | JAGS model to run the full model with variable selection for adult occupancy                                                     | JAGS               |
+|                           |                                                                                                                                  |                    |
+| occupancy_full.R          |                                                                                                                                  |                    |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------+--------------------+
+| adult_dyn\_               | JAGS model to run the reduced model for adult occupancy                                                                          | JAGS               |
+|                           |                                                                                                                                  |                    |
+| occupancy_reduced.R       |                                                                                                                                  |                    |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------+--------------------+
+| adult\_\*.R               | one JAGS model for each of the nested combinations of covariate groups for hierarchical partitioning for adult occupancy model   | JAGS               |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------+--------------------+
+| sex_ratio_model_run.R     | wrapper script for the female ratio model - both full and reduced                                                                | R                  |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------+--------------------+
+| sexratio_byforest\_       | JAGS model with the full covariates for the female ratio model                                                                   | JAGS               |
+|                           |                                                                                                                                  |                    |
+| allcovariates.R           |                                                                                                                                  |                    |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------+--------------------+
+| sexratio_byforest\_       | JAGS model without covariates for the female ratio model                                                                         | JAGS               |
+|                           |                                                                                                                                  |                    |
+| nocovs.R                  |                                                                                                                                  |                    |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------+--------------------+
+
+In the "01_Full_IPM" folder:
+
++------------------------+------------------------------------------------------------------------------------------------+--------------------+
+| File name              | Description                                                                                    | Scripting language |
++========================+================================================================================================+====================+
+| 00_data_summaries.R    | explorations of covariates for the IPM                                                         | R                  |
++------------------------+------------------------------------------------------------------------------------------------+--------------------+
+| 00_prep_background\_   | one for each of the three populations: prep the background occupancy points for the IPM        | R                  |
+|                        |                                                                                                |                    |
+| points.R               |                                                                                                |                    |
++------------------------+------------------------------------------------------------------------------------------------+--------------------+
+| 01_submodel\_          | one for each of the three populations: prep the covariates for each submodel for the IPM       | R                  |
+|                        |                                                                                                |                    |
+| covariate_prep.R       |                                                                                                |                    |
++------------------------+------------------------------------------------------------------------------------------------+--------------------+
+| 01_submodel\_          | one for each of the three populations: prep the posterior covariate effect samples for the IPM | R                  |
+|                        |                                                                                                |                    |
+| posterior_array\_      |                                                                                                |                    |
+|                        |                                                                                                |                    |
+| prep\_\*.R             |                                                                                                |                    |
++------------------------+------------------------------------------------------------------------------------------------+--------------------+
+| 03_combine_data_list.R | one for each of the three populations: combine all data for each population for the IPM        | R                  |
++------------------------+------------------------------------------------------------------------------------------------+--------------------+
+| 04_run_model.R         | one for each of the three populations: run the IPM                                             | R                  |
++------------------------+------------------------------------------------------------------------------------------------+--------------------+
+| 05_run_hp.R            | one for each of the three populations: run hierarchical partitioning the IPM                   | R                  |
++------------------------+------------------------------------------------------------------------------------------------+--------------------+
+| IPM_November2024.R     | The IPM model, which can be run for any population                                             | R                  |
++------------------------+------------------------------------------------------------------------------------------------+--------------------+
+
+In the "04_visualizations" folder:
+
+| File name | Description | Scripting language |
+|----|----|----|
+| covariate_figure.R | Figure to create the covariate categories and directions figures | R |
+| hp_figures.R | Creates the hierarchical partitioning figure | R |
+| pop_trends.R | Creates the population trends figure | R |
+| population_relationships.R | Creates the figure with relationships between stages and population growth | R |
+| SI_backgroundhabitat.R | Creates supplementary figures on the environmental variables of each population | R |
+| SI_GOF.R | Supplementary figures to generate goodness-of-fit for occupancy model | R |
+| SI_Kozma.R | supplementary figure to compare our adult survival values with those published from mark-recapture | R |
+
+# Other objects
+
+Our process involved incorporating raw data (described in data tables above) into a set of cleaned datasets and model outputs and summaries. Below we provide the names, descriptions, and locations of these objects in addition to the data objects we pulled directly from previous work (see Data Provenance section above).
+
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| File name            | Description                                                                                        | Format | Location                                                                     |
++======================+====================================================================================================+========+==============================================================================+
+| 01_occupancy\_       | output of prepping the occupancy observation data                                                  | .csv   | data -\> 00_occupancy_all_vars                                               |
+|                      |                                                                                                    |        |                                                                              |
+| observations.csv     |                                                                                                    |        |                                                                              |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| 02_occupancy\_       | climate data for occupancy model                                                                   | .csv   | data -\> 00_occupancy_all_vars                                               |
+|                      |                                                                                                    |        |                                                                              |
+| climateseasonal.csv  |                                                                                                    |        |                                                                              |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| 04_occupancy\_       | landscape data for occupancy model                                                                 | .csv   | data -\> 00_occupancy_all_vars                                               |
+|                      |                                                                                                    |        |                                                                              |
+| landscape.csv        |                                                                                                    |        |                                                                              |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| 05_occupancy\_       | data prepped for running in the model with JAGS indexing                                           | .RDS   | data -\> 00_occupancy_all_vars                                               |
+|                      |                                                                                                    |        |                                                                              |
+| observations_with\_  |                                                                                                    |        |                                                                              |
+|                      |                                                                                                    |        |                                                                              |
+| indexing.RDS         |                                                                                                    |        |                                                                              |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| Egg_production\_     | tidy data for the egg number model from previously-published work                                  | .csv   | data -\> 01_parameter_model_inputs -\> 01_egg_num                            |
+|                      |                                                                                                    |        |                                                                              |
+| data.csv             |                                                                                                    |        |                                                                              |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| Egg_Nestling\_       | tidy data for the egg and nestling survival models from previously-published work                  | .csv   | data -\> 01_parameter_model_inputs -\> 02_egg_survival                       |
+|                      |                                                                                                    |        |                                                                              |
+| survival_data.csv    |                                                                                                    |        |                                                                              |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| egg_s_data\_         | one for each population: JAGS input data for egg survival                                          | .RDS   | data -\> 01_parameter_model_inputs -\> 02_egg_survival                       |
+|                      |                                                                                                    |        |                                                                              |
+| list\_\*.RDS         |                                                                                                    |        |                                                                              |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| egg_s_data_list.RDS  | JAGS input data for egg survival                                                                   | .RDS   | data -\> 01_parameter_model_inputs -\> 02_egg_survival                       |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| Egg_Nestling\_       | tidy data for the egg and nestling survival models from previously-published work                  | .csv   | data -\> 01_parameter_model_inputs -\> 03_nestling_survival                  |
+|                      |                                                                                                    |        |                                                                              |
+| survival_data.csv    |                                                                                                    |        |                                                                              |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| nestling_s_data\_    | one for each population: JAGS input data for nestling survival                                     | .RDS   | data -\> 01_parameter_model_inputs -\> 03_nestling_survival                  |
+|                      |                                                                                                    |        |                                                                              |
+| list\_\*.RDS         |                                                                                                    |        |                                                                              |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| nestling_s\_         | JAGS input data for nestling survival model                                                        | .RDS   | data -\> 01_parameter_model_inputs -\> 03_nestling_survival                  |
+|                      |                                                                                                    |        |                                                                              |
+| data_list.RDS        |                                                                                                    |        |                                                                              |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| 01_occupancy\_       | data on occupancy presence absence data for adults                                                 | .csv   | data -\> 01_parameter_model_inputs -\> 04_adult_occupancy                    |
+|                      |                                                                                                    |        |                                                                              |
+| observations.csv     |                                                                                                    |        |                                                                              |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| n_occ_covariates.csv | covariates compiled for the adult occupancy full model                                             | .csv   | data -\> 01_parameter_model_inputs -\> 04_adult_occupancy                    |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| adult_data_list.RDS  | data list for JAGS model for all covariates for adult occupancy                                    | .RDS   | data -\> 01_parameter_model_inputs -\> 04_adult_occupancy                    |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| reduced_adult\_      | one for each population: data list for reduced JAGS model                                          | .RDS   | data -\> 01_parameter_model_inputs -\> 04_adult_occupancy                    |
+|                      |                                                                                                    |        |                                                                              |
+| data_list\_\*.RDS    |                                                                                                    |        |                                                                              |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| reduced_adult\_      | data list for reduced JAGS model                                                                   | .RDS   | data -\> 01_parameter_model_inputs -\> 04_adult_occupancy                    |
+|                      |                                                                                                    |        |                                                                              |
+| data_list.RDS        |                                                                                                    |        |                                                                              |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| Sex_ratio_data.csv   | Tidy data for the female ratio model                                                               | .csv   | data -\> 01_parameter_model_inputs -\> 05_sex_ratios                         |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| sexratio_data\_      | JAGS data input list for the female ratio model                                                    | .RDS   | data -\> 01_parameter_model_inputs -\> 05_sex_ratios                         |
+|                      |                                                                                                    |        |                                                                              |
+| list.RDS             |                                                                                                    |        |                                                                              |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| egg_num\_            | parameter posterior samples for egg number model                                                   | .RDS   | data -\> 01_parameter_model_outputs -\> 01_egg_num                           |
+|                      |                                                                                                    |        |                                                                              |
+| parameters.RDS       |                                                                                                    |        |                                                                              |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| egg_survival\_       | one for each population: summaries for the covariate effects for each population                   | .RDS   | data -\> 01_parameter_model_outputs -\> 02_egg_survival                      |
+|                      |                                                                                                    |        |                                                                              |
+| parameter\_          |                                                                                                    |        |                                                                              |
+|                      |                                                                                                    |        |                                                                              |
+| summaries\_\*.RDS    |                                                                                                    |        |                                                                              |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| egg_survival\_       | overall for all populations parameter summaries                                                    | .RDS   | data -\> 01_parameter_model_outputs -\> 02_egg_survival                      |
+|                      |                                                                                                    |        |                                                                              |
+| parameter\_          |                                                                                                    |        |                                                                              |
+|                      |                                                                                                    |        |                                                                              |
+| summaries.RDS        |                                                                                                    |        |                                                                              |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| egg_survival\_       | one for each population: posterior samples for the covariate effects for each population           | .RDS   | data -\> 01_parameter_model_outputs -\> 02_egg_survival                      |
+|                      |                                                                                                    |        |                                                                              |
+| parameters\_\*.RDS   |                                                                                                    |        |                                                                              |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| nestling_survival\_  | one for each population: summaries for the covariate effects for each population                   | .RDS   | data -\> 01_parameter_model_outputs -\> 02_nestling_survival                 |
+|                      |                                                                                                    |        |                                                                              |
+| parameter\_          |                                                                                                    |        |                                                                              |
+|                      |                                                                                                    |        |                                                                              |
+| summaries\_\*.RDS    |                                                                                                    |        |                                                                              |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| nestling_survival\_  | overall for all populations parameter summaries                                                    | .RDS   | data -\> 01_parameter_model_outputs -\> 02_nestling_survival                 |
+|                      |                                                                                                    |        |                                                                              |
+| parameter\_          |                                                                                                    |        |                                                                              |
+|                      |                                                                                                    |        |                                                                              |
+| summaries.RDS        |                                                                                                    |        |                                                                              |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| nestling_survival\_  | one for each population: posterior samples for the covariate effects for each population           | .RDS   | data -\> 01_parameter_model_outputs -\> 02_nestling_survival                 |
+|                      |                                                                                                    |        |                                                                              |
+| parameters\_\*.RDS   |                                                                                                    |        |                                                                              |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| adult_parameter\_    | overall for all populations parameter summaries                                                    | .RDS   | data -\> 01_parameter_model_outputs -\> 04_adult_occupancy                   |
+|                      |                                                                                                    |        |                                                                              |
+| summaries.RDS        |                                                                                                    |        |                                                                              |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| adult\_              | one for each population: posterior samples for the covariate effects for each population           | .RDS   | data -\> 01_parameter_model_outputs -\> 04_adult_occupancy                   |
+|                      |                                                                                                    |        |                                                                              |
+| parameters\_\*.RDS   |                                                                                                    |        |                                                                              |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| sex_ratio\_          | summaries for parameters for the female ratio model                                                | .RDS   | data -\> 01_parameter_model_outputs -\> 05_sex_ratios                        |
+|                      |                                                                                                    |        |                                                                              |
+| parameter\_          |                                                                                                    |        |                                                                              |
+|                      |                                                                                                    |        |                                                                              |
+| summaries.RDS        |                                                                                                    |        |                                                                              |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| sex_ratio\_          | posterior sample for the parameters for the female ratio model                                     | .RDS   | data -\> 01_parameter_model_outputs -\> 05_sex_ratios                        |
+|                      |                                                                                                    |        |                                                                              |
+| parameters.RDS       |                                                                                                    |        |                                                                              |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| adult_hp\_           | results from hierarchical partitioning for adults                                                  | .RDS   | data -\> 03_hierarchical_partitioning -\> \*population -\> adult             |
+|                      |                                                                                                    |        |                                                                              |
+| results\_\*.RDS      |                                                                                                    |        |                                                                              |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| egg_hp\_             | one per population: results from hierarchical partitioning for egg survival                        | .RDS   | data -\> 03_hierarchical_partitioning -\> \*population -\> egg_survival      |
+|                      |                                                                                                    |        |                                                                              |
+| results\_\*.RDS      |                                                                                                    |        |                                                                              |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| eggs\_\*\_           | one for each population: covariate effect samples for each submodel from hierarchical partitioning | .RDS   | data -\> 03_hierarchical_partitioning -\> \*population -\> egg_survival      |
+|                      |                                                                                                    |        |                                                                              |
+| samps\_\*.RDS        |                                                                                                    |        |                                                                              |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| ipm_hp\_             | one per population: results from hierarchical partitioning for IPM                                 | .RDS   | data -\> 03_hierarchical_partitioning -\> \*population -\> ipm               |
+|                      |                                                                                                    |        |                                                                              |
+| results\_\*.RDS      |                                                                                                    |        |                                                                              |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| nestling_hp\_        | one per population: results from hierarchical partitioning for nestling survival                   | .RDS   | data -\> 03_hierarchical_partitioning -\> \*population -\> nestling_survival |
+|                      |                                                                                                    |        |                                                                              |
+| results\_\*.RDS      |                                                                                                    |        |                                                                              |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| nstlss\_\*\_         | one for each population: covariate effect samples for each submodel from hierarchical partitioning | .RDS   | data -\> 03_hierarchical_partitioning -\> \*population -\> nestling_survival |
+|                      |                                                                                                    |        |                                                                              |
+| samps\_\*.RDS        |                                                                                                    |        |                                                                              |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| adult_bkgrnd\_       | one for each population: background point covariates for the IPM                                   | .csv   | data -\> 03_ipm_data_prep                                                    |
+|                      |                                                                                                    |        |                                                                              |
+| point\_              |                                                                                                    |        |                                                                              |
+|                      |                                                                                                    |        |                                                                              |
+| covariates\_\*.csv   |                                                                                                    |        |                                                                              |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| Egg_Nestling\_       | tidy data from previous published work for egg and nestling survival                               | .csv   | data -\> 03_ipm_data_prep                                                    |
+|                      |                                                                                                    |        |                                                                              |
+| survival_data.csv    |                                                                                                    |        |                                                                              |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| covariate_data\_     | one for each population: list of covariates for each forest for the IPM                            | .RDS   | data -\> 04_ipm_data_inputs                                                  |
+|                      |                                                                                                    |        |                                                                              |
+| list\_\*.RDS         |                                                                                                    |        |                                                                              |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| IPM_data\_           | one for each population: full list of data for each population to run the IPM                      | .RDS   | data -\> 04_ipm_data_inputs                                                  |
+|                      |                                                                                                    |        |                                                                              |
+| list\_\*.RDS         |                                                                                                    |        |                                                                              |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| posterior_data\_     | one for each population: list of posterior samples for each population                             | .RDS   | data -\> 04_ipm_data_inputs                                                  |
+|                      |                                                                                                    |        |                                                                              |
+| list\_\*.RDS         |                                                                                                    |        |                                                                              |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| \*\_ipm\_            | one for each population: correlations between population growth and different stages               | .RDS   | data -\> ipm_outputs                                                         |
+|                      |                                                                                                    |        |                                                                              |
+| correlations.RDS     |                                                                                                    |        |                                                                              |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| \*\_ipm\_            | one for each population: summary of all population stages for each population                      | .RDS   | data -\> ipm_outputs                                                         |
+|                      |                                                                                                    |        |                                                                              |
+| summary.RDS          |                                                                                                    |        |                                                                              |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+| \*\_lambda\_         | one for each population: summary of lambda for each population                                     | .RDS   | data -\> ipm_outputs                                                         |
+|                      |                                                                                                    |        |                                                                              |
+| summary.RDS          |                                                                                                    |        |                                                                              |
++----------------------+----------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------+
+
+In the "monsoon" folder
+
++---------------------+--------------------------------------------------------------------------------------------------------------------+-----------+---------------------------------------------------------------------------------------------------------+
+| File name           | Description                                                                                                        | Format    | Location                                                                                                |
++=====================+====================================================================================================================+===========+=========================================================================================================+
+| adult\_\*.R         | one for each submodel: JAGS model for each submodel for hierarchical partitioning                                  | .R (JAGS) | parameter_models -\> adult_occupancy -\> hierarchical_partitioning -\> inputs                           |
++---------------------+--------------------------------------------------------------------------------------------------------------------+-----------+---------------------------------------------------------------------------------------------------------+
+| hp_script\_\*\_\*.R | one for each submodel and population: wrapper script for running each submodel for each population                 | .R        | parameter_models -\> adult_occupancy -\> hierarchical_partitioning -\> inputs                           |
++---------------------+--------------------------------------------------------------------------------------------------------------------+-----------+---------------------------------------------------------------------------------------------------------+
+| reduced\_           | one for each population: data list for the reduced JAGS model for adult occupancy                                  | .RDS      | parameter_models -\> adult_occupancy -\> hierarchical_partitioning -\> inputs                           |
+|                     |                                                                                                                    |           |                                                                                                         |
+| adult_data\_        |                                                                                                                    |           |                                                                                                         |
+|                     |                                                                                                                    |           |                                                                                                         |
+| list\_\*.RDS        |                                                                                                                    |           |                                                                                                         |
++---------------------+--------------------------------------------------------------------------------------------------------------------+-----------+---------------------------------------------------------------------------------------------------------+
+| adult\_\*\_         | one for each submodel and each population: pulling results for each hierarchical partitioning model and population | .R        | parameter_models -\> adult_occupancy -\> hierarchical_partitioning -\> outputs                          |
+|                     |                                                                                                                    |           |                                                                                                         |
+| results\_\*.R       |                                                                                                                    |           |                                                                                                         |
++---------------------+--------------------------------------------------------------------------------------------------------------------+-----------+---------------------------------------------------------------------------------------------------------+
+| adult\_\*\_         | one for each model and each population: samples of outputs for each hierarchical partitioning model                | .RDS      | parameter_models -\> adult_occupancy -\> hierarchical_partitioning -\> outputs -\> \*population_samples |
+|                     |                                                                                                                    |           |                                                                                                         |
+| parameter\_         |                                                                                                                    |           |                                                                                                         |
+|                     |                                                                                                                    |           |                                                                                                         |
+| samples\_\*.RDS     |                                                                                                                    |           |                                                                                                         |
++---------------------+--------------------------------------------------------------------------------------------------------------------+-----------+---------------------------------------------------------------------------------------------------------+
+| adult_dyn\_         | occupancy model for full model with all covariates                                                                 | .R (JAGS) | parameter_models -\> adult_occupancy -\> inputs                                                         |
+|                     |                                                                                                                    |           |                                                                                                         |
+| occupancy\_         |                                                                                                                    |           |                                                                                                         |
+|                     |                                                                                                                    |           |                                                                                                         |
+| phionly.R           |                                                                                                                    |           |                                                                                                         |
++---------------------+--------------------------------------------------------------------------------------------------------------------+-----------+---------------------------------------------------------------------------------------------------------+
+| adult\_             | JAGS input data list                                                                                               | .RDS      | parameter_models -\> adult_occupancy -\> inputs                                                         |
+|                     |                                                                                                                    |           |                                                                                                         |
+| occupancy_data.RDS  |                                                                                                                    |           |                                                                                                         |
++---------------------+--------------------------------------------------------------------------------------------------------------------+-----------+---------------------------------------------------------------------------------------------------------+
+| convergence\_       | all scripts check convergence of different models                                                                  | .R        | parameter_models -\> adult_occupancy -\> inputs                                                         |
+|                     |                                                                                                                    |           |                                                                                                         |
+| check\*.R           |                                                                                                                    |           |                                                                                                         |
++---------------------+--------------------------------------------------------------------------------------------------------------------+-----------+---------------------------------------------------------------------------------------------------------+
+| script\*.R          | all scripts run the model and/or output model summaries for the model                                              | .R        | parameter_models -\> adult_occupancy -\> inputs                                                         |
++---------------------+--------------------------------------------------------------------------------------------------------------------+-----------+---------------------------------------------------------------------------------------------------------+
