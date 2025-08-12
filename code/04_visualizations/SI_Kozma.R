@@ -1,5 +1,4 @@
 #SI figure to compare to published survival values
-#Ana Miller-ter Kuile
 #January 22, 2025
 
 #this script compares published values of adult survival to ours

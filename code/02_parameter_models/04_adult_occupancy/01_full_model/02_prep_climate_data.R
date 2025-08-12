@@ -1,7 +1,5 @@
 # Occupancy data compiling
 # April 20, 2023
-# Ana Miller-ter Kuile
-
 # this script combines data for the adult occupancy model
 
 # Load packages -----------------------------------------------------------

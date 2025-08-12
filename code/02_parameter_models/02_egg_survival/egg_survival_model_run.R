@@ -1,5 +1,4 @@
 # Data prep for egg survival JAGS model
-# Ana Miller-ter Kuile
 # April 19, 2023
 
 # this script preps data for the JAGS submodel for egg survival

@@ -1,5 +1,4 @@
 # Hierarchical partitioning code for egg survyval model
-# Ana Miller-ter Kuile
 # December 11, 2023
 
 # this script runs each model covariate set on the egg survival

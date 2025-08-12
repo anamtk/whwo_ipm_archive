@@ -1,5 +1,4 @@
 #Hierarchical partitioning for the adult model
-#Ana Miller-ter Kuile
 #December 14, 2023
 
 # Load packages -----------------------------------------------------------

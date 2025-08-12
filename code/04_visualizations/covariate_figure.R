@@ -1,5 +1,4 @@
 #Visualizations of sub-models and hierarchical partitioning
-#Ana Miller-ter Kuile
 #June 25, 2024
 
 #this script makes a multi-panel figure with covariate

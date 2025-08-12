@@ -1,5 +1,4 @@
 # Assess model convergence and posteriors
-# Ana Miller-ter Kuile
 # May 9, 2023
 
 #this script looks at convergence

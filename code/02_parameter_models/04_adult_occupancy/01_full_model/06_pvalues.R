@@ -1,5 +1,4 @@
 #Summary stats for occupancy model
-#Ana Miller-ter Kuile
 #June 26, 2023
 
 #This script takes the summary of the ocupancy

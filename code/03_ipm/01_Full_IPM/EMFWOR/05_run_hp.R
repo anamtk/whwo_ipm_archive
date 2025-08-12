@@ -1,5 +1,4 @@
 #HP of full IPM
-#Ana Miller-ter Kuile
 #June 14, 2023
 
 

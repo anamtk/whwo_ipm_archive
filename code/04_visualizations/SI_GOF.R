@@ -1,5 +1,4 @@
 #GOF for full dynamic occupancy model
-#Ana Miller-ter Kuile
 #January 23, 2025
 
 # Load packages -----------------------------------------------------------

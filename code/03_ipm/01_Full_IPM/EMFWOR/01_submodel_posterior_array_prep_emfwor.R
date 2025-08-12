@@ -1,5 +1,4 @@
 #Submodel parameter posterior arrays
-#Ana Miller-ter Kuile
 #June 14, 2023
 
 #this script compiles all the statistical model posterior

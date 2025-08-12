@@ -1,5 +1,4 @@
 #EMFWOR full IPM
-#Ana Miller-ter Kuile
 #June 14, 2023
 
 #this script runs the full IPM

@@ -1,5 +1,4 @@
 # Functions for hierarchical partitioning
-# Ana Miller-ter Kuile
 # December 11, 2023
 
 # these are functions for running the hierarchical partitioning

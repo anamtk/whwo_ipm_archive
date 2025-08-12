@@ -1,5 +1,4 @@
 #Test the full IPM
-#Ana Miller-ter Kuile
 #June 14, 2023
 
 # Load packages -----------------------------------------------------------

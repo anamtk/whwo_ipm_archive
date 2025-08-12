@@ -1,5 +1,4 @@
 #HP visualizations for each life stage
-#Ana Miller-ter Kuile
 #February 1, 2024
 
 #this script summarizes the visualizations of the hierarchical partitioning
@@ -54,54 +53,72 @@ egg_hp_paid <- readRDS(here('data',
 
 nestling_hp_fwor <- readRDS(here('data',
                             '03_hierarchical_partitioning',
+                            'emfwor',
+                            'nestling_survival',
                             'nestling_hp_results_emfwor.RDS')) %>%
   mutate(stage = 'Nestling survival',
          forest = "EMFWOR")
 
 nestling_hp_maor <- readRDS(here('data',
                                  '03_hierarchical_partitioning',
+                                 'emmaor',
+                                 'nestling_survival',
                                  'nestling_hp_results_emmaor.RDS')) %>%
   mutate(stage = 'Nestling survival',
          forest = "EMMAOR")
 
 nestling_hp_paid <- readRDS(here('data',
                                  '03_hierarchical_partitioning',
+                                 'empaid',
+                                 'nestling_survival',
                                  'nestling_hp_results_empaid.RDS')) %>%
   mutate(stage = 'Nestling survival',
          forest = "EMPAID")
 
 adult_hp_fwor <- readRDS(here('data',
                          '03_hierarchical_partitioning',
+                         'emfwor',
+                         'adult',
                          'adult_hp_results_emfwor.RDS')) %>%
   mutate(stage = 'Adult survival',
          forest = "EMFWOR")
 
 adult_hp_maor <- readRDS(here('data',
                               '03_hierarchical_partitioning',
+                              'emmaor',
+                              'adult',
                               'adult_hp_results_emmaor.RDS')) %>%
   mutate(stage = 'Adult survival',
          forest = "EMMAOR")
 
 adult_hp_paid <- readRDS(here('data',
                               '03_hierarchical_partitioning',
+                              'empaid',
+                              'adult',
                               'adult_hp_results_empaid.RDS')) %>%
   mutate(stage = 'Adult survival',
          forest = "EMPAID")
 
 emfwor_hp <- readRDS(here('data',
                           '03_hierarchical_partitioning',
+                          'emfwor',
+                          'ipm',
                           'ipm_hp_results_EMFWOR.RDS')) %>%
   mutate(forest = 'EMFWOR') %>%
   mutate(stage = 'Population change')
 
 emmaor_hp <- readRDS(here('data',
                           '03_hierarchical_partitioning',
+                          'emmaor',
+                          'ipm',
                           'ipm_hp_results_EMMAOR.RDS')) %>%
   mutate(forest = 'EMMAOR')%>%
   mutate(stage = 'Population change')
 
 empaid_hp <- readRDS(here('data',
                           '03_hierarchical_partitioning',
+                          'empaid',
+                          'ipm',
                           'ipm_hp_results_EMPAID.RDS')) %>%
   mutate(forest = 'EMPAID')%>%
   mutate(stage = 'Population change')

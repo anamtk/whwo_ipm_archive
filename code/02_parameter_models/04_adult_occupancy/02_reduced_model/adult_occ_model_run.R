@@ -1,5 +1,4 @@
 # Data prep for adult occupancy all variables
-# Ana Miller-ter Kuile
 # April 19, 2023
 
 # this script preps data for the JAGS model looking for important

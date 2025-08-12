@@ -1,5 +1,4 @@
 # Tidying functions
-# Ana Miller-ter Kuile
 # September 21, 2021
 
 # useful functions for dealing with the data from the 

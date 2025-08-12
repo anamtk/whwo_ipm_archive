@@ -1,5 +1,4 @@
 #Submodel covariate compilations
-#Ana Miller-ter Kuile
 #June 13, 2023
 
 #this script compiles all the covariate data for

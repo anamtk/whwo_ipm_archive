@@ -1,5 +1,4 @@
 #Combine lists of covariates and posterior covariate effects
-#Ana Miller-ter Kuile
 #June 14, 2023
 
 #this script combines the covariatres from teh submodels

@@ -1,5 +1,4 @@
 #Background point prep
-#Ana Miller-ter Kuile
 #January 7, 2025
 
 #this script preps the background point data for the model

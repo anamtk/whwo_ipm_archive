@@ -1,5 +1,4 @@
 # Prep landscape variables for adult occupancy
-# Ana Miller-ter Kuile
 # April 20, 2023
 
 # this script preps the landscape variables for occupancy at 1000 m scale

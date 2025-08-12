@@ -1,5 +1,4 @@
 #Run IPM EMPAID
-#Ana Miller-ter Kuile
 #June 14, 2023
 
 #this script runs a test run of the full IPM for EMPAID

@@ -1,6 +1,5 @@
 # Breeding ratio checks
 # March 7, 2023
-# Ana Miller-ter Kuile
 
 #examination of the how many adults observed on same transects as nests
 

@@ -1,5 +1,4 @@
 #White-headed woodpecker Integrated Population Model
-# Ana Miller-ter Kuile
 # May 23, 2023
 
 # Load packages -----------------------------------------------------------

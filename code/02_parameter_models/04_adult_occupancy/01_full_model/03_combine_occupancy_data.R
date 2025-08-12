@@ -1,5 +1,4 @@
 # Combine all data for N-occupancy model
-# Ana Miller-ter Kuile
 # April 21, 2023
 
 # this script combines observation, local, landscape, and climate
